@@ -1,12 +1,20 @@
-#include <stdio.h>
 #include "main.h"
+/**
+ *_memset - fill a block of memory with a specific value
+ *@s: starting address of memory to be filled
+ *@b: the desired value
+ *@n: number of bytes to be changed
+ *
+ *Return: changed array with new value for n bytes
+ */
+char *_memset(char *s, char b, unsigned int n)
+{
+	int i = 0;
 
-int main(){
-	char str[10] = "make a constant variable";
-	printf("\nBefore memset() :%s\n", str);
-	//fill 5 character starting from str [2] with '.'
-	
-memset(str + 2, ', ', 8*sizeof(char));
-printf("After memset(): %s", str);
-return 0;
+	for (; n > 0; i++)
+	{
+		s[i] = b;
+		n--;
+	}
+	return (s);
 }
